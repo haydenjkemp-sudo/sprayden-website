@@ -212,3 +212,27 @@ section p{
   margin-top:20px;
   accent-color:#005bff;
 }
+
+.comparison {
+  height: 520px;
+}
+
+.comparison img {
+  height: 520px;
+  object-fit: cover;
+}
+
+.after-wrapper {
+  height: 520px;
+}
+
+@media (max-width: 800px) {
+  .comparison {
+    height: 330px;
+  }
+
+  .comparison img,
+  .after-wrapper {
+    height: 330px;
+  }
+}
