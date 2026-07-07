@@ -60,3 +60,49 @@ footer{padding:28px;text-align:center;color:#999;background:#030303}
   .btn{width:100%}
   .comparison,.comparison img,.after-wrapper{height:330px}
 }
+
+.quote-form{
+  max-width:720px;
+  margin:35px auto;
+  display:grid;
+  gap:14px;
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea{
+  width:100%;
+  padding:16px 18px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.07);
+  color:white;
+  font-family:'Poppins',Arial,sans-serif;
+  font-size:16px;
+}
+
+.quote-form textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.quote-form input::placeholder,
+.quote-form textarea::placeholder{
+  color:#bfbfbf;
+}
+
+.quote-form button{
+  border:none;
+  background:#005bff;
+  color:white;
+  padding:17px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:17px;
+  box-shadow:0 0 30px rgba(0,91,255,.65);
+  cursor:pointer;
+}
+
+.quote-form button:hover{
+  transform:translateY(-2px);
+}
