@@ -1,67 +1,95 @@
-/* ===== SPRAYDEN WEBSITE ===== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#0b0b0b;
-    color:white;
-    line-height:1.6;
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #050505;
+  color: #ffffff;
 }
 
-header{
-    background:#111;
-    padding:20px 8%;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    border-bottom:2px solid #00AEEF;
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background:
+    radial-gradient(circle at top, rgba(0, 94, 255, 0.35), transparent 35%),
+    linear-gradient(180deg, #050505, #0d111c);
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px;
-    background:linear-gradient(180deg,#0b0b0b,#101827);
+.hero-content {
+  max-width: 850px;
 }
 
-.hero h1{
-    font-size:3rem;
-    color:#fff;
-    margin-bottom:20px;
+.hero h1 {
+  font-size: clamp(52px, 12vw, 120px);
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(0, 94, 255, 0.8);
 }
 
-.hero p{
-    font-size:1.2rem;
-    color:#cfcfcf;
-    max-width:650px;
-    margin:auto;
+.hero h2 {
+  margin-top: 15px;
+  font-size: clamp(30px, 6vw, 62px);
+  color: #005bff;
 }
 
-.quote-btn{
-    display:inline-block;
-    margin-top:35px;
-    background:#00AEEF;
-    color:white;
-    padding:15px 35px;
-    text-decoration:none;
-    border-radius:40px;
-    font-weight:bold;
-    transition:.3s;
+.hero p {
+  margin: 25px auto 0;
+  max-width: 700px;
+  color: #d4d4d4;
+  font-size: clamp(17px, 4vw, 24px);
+  line-height: 1.6;
 }
 
-.quote-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 25px #00AEEF;
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-section{
-    padding:80px 8%;
+.btn {
+  padding: 16px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.btn.blue {
+  background: #005bff;
+  color: white;
+  box-shadow: 0 0 25px rgba(0, 91, 255, 0.6);
+}
+
+.btn.dark {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn.blue:hover {
+  box-shadow: 0 0 45px rgba(0, 91, 255, 1);
+}
+
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }
