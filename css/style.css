@@ -1,0 +1,67 @@
+/* ===== SPRAYDEN WEBSITE ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0b0b0b;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    background:#111;
+    padding:20px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:2px solid #00AEEF;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    background:linear-gradient(180deg,#0b0b0b,#101827);
+}
+
+.hero h1{
+    font-size:3rem;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    color:#cfcfcf;
+    max-width:650px;
+    margin:auto;
+}
+
+.quote-btn{
+    display:inline-block;
+    margin-top:35px;
+    background:#00AEEF;
+    color:white;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.quote-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px #00AEEF;
+}
+
+section{
+    padding:80px 8%;
+}
