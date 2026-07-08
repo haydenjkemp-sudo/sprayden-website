@@ -1,7 +1,3 @@
-/* =========================
-   SPRAYDEN PREMIUM JS
-========================= */
-
 // Mobile menu
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
@@ -10,12 +6,6 @@ if (menuBtn && navMenu) {
   menuBtn.addEventListener("click", () => {
     navMenu.classList.toggle("open");
   });
-
-  navMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("open");
-    });
-  });
 }
 
 // Before / after slider
@@ -23,40 +13,35 @@ const range = document.getElementById("compareRange");
 const afterLayer = document.getElementById("afterLayer");
 const sliderLine = document.getElementById("sliderLine");
 
-function updateComparison() {
+function updateSlider() {
   if (!range || !afterLayer || !sliderLine) return;
-
   afterLayer.style.width = range.value + "%";
   sliderLine.style.left = range.value + "%";
 }
 
 if (range) {
-  updateComparison();
-  range.addEventListener("input", updateComparison);
+  updateSlider();
+  range.addEventListener("input", updateSlider);
+  range.addEventListener("change", updateSlider);
 }
 
-// Scroll reveal animations
-const revealItems = document.querySelectorAll(
-  ".reveal, .service-card, .glass-card, .process-grid article, .stats-grid article, .faq-list details"
-);
+// Reveal animations
+const items = document.querySelectorAll(".reveal, .service-card, .glass-card, .process-grid article, .stats-grid article, .faq-list details");
 
-const revealObserver = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-      revealObserver.unobserve(entry.target);
     }
   });
-}, {
-  threshold: 0.15
-});
+}, { threshold: 0.15 });
 
-revealItems.forEach(item => {
+items.forEach(item => {
   item.classList.add("hide");
-  revealObserver.observe(item);
+  observer.observe(item);
 });
 
-// Animated counters
+// Counters
 const counters = document.querySelectorAll("[data-count]");
 let counted = false;
 
@@ -71,12 +56,10 @@ function runCounters() {
 
     const timer = setInterval(() => {
       current += step;
-
       if (current >= target) {
         current = target;
         clearInterval(timer);
       }
-
       counter.textContent = current;
     }, 24);
   });
@@ -86,44 +69,27 @@ const statsSection = document.querySelector(".stats-section");
 
 if (statsSection) {
   const statsObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      runCounters();
-    }
-  }, {
-    threshold: 0.3
-  });
+    if (entries[0].isIntersecting) runCounters();
+  }, { threshold: 0.3 });
 
   statsObserver.observe(statsSection);
 }
 
-console.log("Sprayden premium website loaded");
+// Back to top
+const backTop = document.getElementById("backToTop");
 
-/* Back To Top */
+if (backTop) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+      backTop.classList.add("show");
+    } else {
+      backTop.classList.remove("show");
+    }
+  });
 
-const backTop=document.getElementById("backToTop");
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>500){
-
-backTop.classList.add("show");
-
-}else{
-
-backTop.classList.remove("show");
-
+  backTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
-});
-
-backTop?.addEventListener("click",()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-});
+console.log("Sprayden JS working");
