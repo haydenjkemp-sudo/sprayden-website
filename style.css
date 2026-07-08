@@ -1385,3 +1385,37 @@ font-weight:700;
     width:78vw;
   }
 }
+
+/* PREMIUM HEADER */
+
+.topbar{
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+background:rgba(5,10,22,.78);
+border-bottom:1px solid rgba(255,255,255,.08);
+box-shadow:0 10px 40px rgba(0,0,0,.35);
+transition:.35s;
+}
+
+.topbar.scrolled{
+background:rgba(5,10,22,.94);
+box-shadow:0 15px 60px rgba(0,0,0,.5);
+}
+
+.brand img{
+transition:.4s ease;
+}
+
+.brand:hover img{
+transform:scale(1.05);
+filter:drop-shadow(0 0 18px rgba(0,91,255,.45));
+}
+
+.menu-btn{
+transition:.3s;
+}
+
+.menu-btn:hover{
+transform:rotate(90deg);
+color:#00b7ff;
+}
