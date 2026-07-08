@@ -899,3 +899,31 @@ form button{
     transform:translate(-50%,-50%);
 
 }
+
+#why .service-card{
+
+background:linear-gradient(180deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.03));
+
+}
+
+#why .service-card:hover{
+
+transform:translateY(-10px) scale(1.03);
+
+box-shadow:0 0 45px rgba(0,91,255,.45);
+
+}
+
+#why span{
+
+display:block;
+
+font-size:48px;
+
+margin-bottom:18px;
+
+animation:logoFloat 4s infinite;
+
+}
