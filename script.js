@@ -1,50 +1,16 @@
-// Before / After Slider
-const slider = document.getElementById("compare");
-const afterWrap = document.querySelector(".after-wrap");
-const line = document.querySelector(".line");
-
-if (slider && afterWrap && line) {
-  function updateSlider() {
-    afterWrap.style.width = slider.value + "%";
-    line.style.left = slider.value + "%";
-  }
-
-  updateSlider();
-  slider.addEventListener("input", updateSlider);
-}
-
-// Scroll animations
-const revealElements = document.querySelectorAll(".reveal");
+const animatedSections = document.querySelectorAll(".section, .card, .review, .steps div");
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+      entry.target.classList.add("show");
     }
   });
-}, {
-  threshold: 0.2
+}, { threshold: 0.15 });
+
+animatedSections.forEach(el => {
+  el.classList.add("hide");
+  observer.observe(el);
 });
 
-revealElements.forEach((el) => observer.observe(el));
-
-// Smooth logo animation
-const logo = document.querySelector(".main-logo");
-
-if (logo) {
-  let direction = 1;
-
-  setInterval(() => {
-    const current = parseFloat(logo.dataset.offset || "0");
-
-    let next = current + direction;
-
-    if (next > 8) direction = -1;
-    if (next < -8) direction = 1;
-
-    logo.dataset.offset = next;
-    logo.style.transform = `translateY(${next}px)`;
-  }, 60);
-}
-
-console.log("🚀 Sprayden Premium Loaded");
+console.log("Sprayden premium animations loaded");
