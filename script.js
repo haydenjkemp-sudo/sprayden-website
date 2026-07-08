@@ -1,5 +1,3 @@
-
-
 const range = document.getElementById("compareRange");
 const afterLayer = document.getElementById("afterLayer");
 const sliderLine = document.getElementById("sliderLine");
@@ -71,4 +69,6 @@ document.querySelectorAll("#navMenu a").forEach(link => {
   link.addEventListener("click", () => {
     document.getElementById("navMenu").classList.remove("open");
   });
+  document.getElementById("backToTop")?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
