@@ -1794,3 +1794,34 @@ color:#00b7ff;
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-10px);}
 }
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.stats-grid article {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(0,170,255,.15);
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: .35s ease;
+    backdrop-filter: blur(12px);
+}
+
+.stats-grid b {
+    display: block;
+    font-size: 3rem;
+    color: #1da1ff;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(29,161,255,.5);
+}
+
+.stats-grid p {
+    color: #d5d5d5;
+    font-size: 1rem;
+    line-height: 1.5;
+}
