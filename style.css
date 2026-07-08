@@ -1034,3 +1034,54 @@ text-align:center;
     padding:70px 20px;
   }
 }
+
+@media(max-width:900px){
+
+  .hero{
+    min-height:auto;
+    padding:45px 18px 65px;
+  }
+
+  .hero-logo{
+    width:82vw;
+    margin-bottom:22px;
+  }
+
+  .hero-text{
+    font-size:18px;
+    line-height:1.55;
+  }
+
+  .hero-badges{
+    gap:10px;
+  }
+
+  .hero-badges span{
+    font-size:14px;
+    padding:10px 14px;
+  }
+
+  .trust-strip{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .trust-strip span{
+    padding:14px 8px;
+    font-size:16px;
+  }
+
+  .section{
+    padding:72px 18px;
+  }
+
+  h1{
+    font-size:40px;
+  }
+
+  h2{
+    font-size:36px;
+  }
+
+  .float{
+    right:14px;
+ 
