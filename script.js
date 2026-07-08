@@ -93,3 +93,15 @@ if (backTop) {
 }
 
 console.log("Sprayden JS working");
+
+const topbar = document.getElementById("topbar");
+
+if (topbar) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      topbar.classList.add("scrolled");
+    } else {
+      topbar.classList.remove("scrolled");
+    }
+  });
+}
