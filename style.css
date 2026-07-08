@@ -301,3 +301,38 @@ footer{
   transform:translateY(0);
   transition:all .8s ease;
 }
+@media(max-width:850px){
+  .navbar{
+    position:sticky;
+    top:0;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+
+  .nav-links{
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#050505;
+    border-top:1px solid rgba(255,255,255,.14);
+    justify-content:space-around;
+    padding:12px 6px;
+    z-index:9999;
+  }
+
+  .nav-links a{
+    font-size:12px;
+  }
+
+  .floating-call,
+  .floating-whatsapp{
+    display:none;
+  }
+
+  body{
+    padding-bottom:60px;
+  }
+}
