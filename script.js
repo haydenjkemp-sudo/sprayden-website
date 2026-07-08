@@ -1,4 +1,3 @@
-// Mobile menu
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 
@@ -6,9 +5,14 @@ if (menuBtn && navMenu) {
   menuBtn.addEventListener("click", () => {
     navMenu.classList.toggle("open");
   });
+
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+    });
+  });
 }
 
-// Before / after slider
 const range = document.getElementById("compareRange");
 const afterLayer = document.getElementById("afterLayer");
 const sliderLine = document.getElementById("sliderLine");
@@ -23,68 +27,36 @@ if (range) {
   updateSlider();
   range.addEventListener("input", updateSlider);
   range.addEventListener("change", updateSlider);
+  range.addEventListener("touchmove", updateSlider);
 }
 
-// Reveal animations
-const items = document.querySelectorAll(".reveal, .service-card, .glass-card, .process-grid article, .stats-grid article, .faq-list details");
+const topbar = document.getElementById("topbar");
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+if (topbar) {
+  window.addEventListener("scroll", () => {
+    topbar.classList.toggle("scrolled", window.scrollY > 40);
+  });
+}
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add("active");
+      el.classList.add("show");
     }
   });
-}, { threshold: 0.15 });
-
-items.forEach(item => {
-  item.classList.add("hide");
-  observer.observe(item);
-});
-
-// Counters
-const counters = document.querySelectorAll("[data-count]");
-let counted = false;
-
-function runCounters() {
-  if (counted) return;
-  counted = true;
-
-  counters.forEach(counter => {
-    const target = Number(counter.dataset.count);
-    let current = 0;
-    const step = Math.max(1, Math.ceil(target / 60));
-
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      counter.textContent = current;
-    }, 24);
-  });
 }
 
-const statsSection = document.querySelector(".stats-section");
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
 
-if (statsSection) {
-  const statsObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) runCounters();
-  }, { threshold: 0.3 });
-
-  statsObserver.observe(statsSection);
-}
-
-// Back to top
 const backTop = document.getElementById("backToTop");
 
 if (backTop) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-      backTop.classList.add("show");
-    } else {
-      backTop.classList.remove("show");
-    }
+    backTop.classList.toggle("show", window.scrollY > 500);
   });
 
   backTop.addEventListener("click", () => {
@@ -92,30 +64,4 @@ if (backTop) {
   });
 }
 
-console.log("Sprayden JS working");
-
-const topbar = document.getElementById("topbar");
-
-if (topbar) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-      topbar.classList.add("scrolled");
-    } else {
-      topbar.classList.remove("scrolled");
-    }
-  });
-}
-
-const reveals = document.querySelectorAll(".reveal");
-
-const revealOnScroll = () => {
-  reveals.forEach((el) => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-};
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+console.log("Sprayden fixed JS loaded");
