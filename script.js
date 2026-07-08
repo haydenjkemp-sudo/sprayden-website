@@ -97,3 +97,33 @@ if (statsSection) {
 }
 
 console.log("Sprayden premium website loaded");
+
+/* Back To Top */
+
+const backTop=document.getElementById("backToTop");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+backTop.classList.add("show");
+
+}else{
+
+backTop.classList.remove("show");
+
+}
+
+});
+
+backTop?.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
