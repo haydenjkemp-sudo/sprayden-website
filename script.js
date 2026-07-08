@@ -72,3 +72,10 @@ document.querySelectorAll("#navMenu a").forEach(link => {
   document.getElementById("backToTop")?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 1200);
+});
