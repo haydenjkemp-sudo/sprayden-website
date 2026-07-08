@@ -39,3 +39,39 @@ window.onload = function () {
         }, 1200);
     }
 };
+// Animated statistics
+const counters = document.querySelectorAll("[data-count]");
+
+const startCounters = () => {
+    counters.forEach(counter => {
+        const target = parseInt(counter.dataset.count);
+        let current = 0;
+        const increment = Math.max(1, Math.ceil(target / 50));
+
+        const update = () => {
+            current += increment;
+
+            if (current >= target) {
+                counter.textContent = target;
+            } else {
+                counter.textContent = current;
+                requestAnimationFrame(update);
+            }
+        };
+
+        update();
+    });
+};
+
+const statsSection = document.querySelector(".stats-section");
+
+if (statsSection) {
+    const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            startCounters();
+            observer.disconnect();
+        }
+    }, { threshold: 0.4 });
+
+    observer.observe(statsSection);
+}
