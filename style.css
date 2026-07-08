@@ -1825,3 +1825,41 @@ color:#00b7ff;
     font-size: 1rem;
     line-height: 1.5;
 }
+
+.colour-grid{
+  max-width:900px;
+  margin:45px auto 0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.colour-grid div{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;
+  padding:22px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:900;
+}
+
+.swatch{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:inline-block;
+  border:2px solid rgba(255,255,255,.35);
+}
+
+.anthracite{background:#2f3338;}
+.black{background:#050505;}
+.white{background:#f3f3f3;}
+.green{background:#b7c9a8;}
+
+@media(max-width:768px){
+  .colour-grid{
+    grid-template-columns:1fr;
+  }
+}
