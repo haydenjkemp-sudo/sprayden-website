@@ -927,3 +927,76 @@ margin-bottom:18px;
 animation:logoFloat 4s infinite;
 
 }
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:40px;
+
+margin:50px auto;
+
+max-width:1100px;
+
+text-align:left;
+
+}
+
+.footer-grid h4{
+
+margin-bottom:15px;
+
+color:white;
+
+}
+
+.footer-grid a,
+.footer-grid p{
+
+display:block;
+
+margin:8px 0;
+
+color:var(--muted);
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.footer-grid a:hover{
+
+color:var(--blue-light);
+
+transform:translateX(6px);
+
+}
+
+footer hr{
+
+margin:40px auto;
+
+border:none;
+
+height:1px;
+
+background:rgba(255,255,255,.12);
+
+max-width:1100px;
+
+}
+
+@media(max-width:900px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+}
