@@ -65,3 +65,9 @@ if (backTop) {
 }
 
 console.log("Sprayden fixed JS loaded");
+
+document.querySelectorAll("#navMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navMenu").classList.remove("open");
+  });
+});
