@@ -1547,3 +1547,27 @@ color:#00b7ff;
     padding:12px !important;
   }
 }
+
+.comparison{
+  position:relative !important;
+}
+
+#compareRange{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  opacity:0 !important;
+  z-index:999 !important;
+  cursor:ew-resize !important;
+  touch-action:none !important;
+}
+
+.after-layer{
+  pointer-events:none !important;
+}
+
+.slider-line{
+  pointer-events:none !important;
+  z-index:998 !important;
+}
