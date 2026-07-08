@@ -1,17 +1,4 @@
-const menuBtn = document.getElementById("menuBtn");
-const navMenu = document.getElementById("navMenu");
 
-if (menuBtn && navMenu) {
-  menuBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-  });
-
-  navMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("open");
-    });
-  });
-}
 
 const range = document.getElementById("compareRange");
 const afterLayer = document.getElementById("afterLayer");
@@ -66,10 +53,6 @@ if (backTop) {
 
 console.log("Sprayden fixed JS loaded");
 
-document.querySelectorAll("#navMenu a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("navMenu").classList.remove("open");
-  });
 });
 // Close menu when clicking outside it
 document.addEventListener("click", (e) => {
@@ -83,4 +66,9 @@ document.addEventListener("click", (e) => {
     ) {
         menu.classList.remove("open");
     }
+});
+document.querySelectorAll("#navMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navMenu").classList.remove("open");
+  });
 });
