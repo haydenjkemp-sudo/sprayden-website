@@ -71,3 +71,16 @@ document.querySelectorAll("#navMenu a").forEach(link => {
     document.getElementById("navMenu").classList.remove("open");
   });
 });
+// Close menu when clicking outside it
+document.addEventListener("click", (e) => {
+    const menu = document.getElementById("navMenu");
+    const toggle = document.querySelector(".menu-toggle");
+
+    if (
+        menu.classList.contains("open") &&
+        !menu.contains(e.target) &&
+        !toggle.contains(e.target)
+    ) {
+        menu.classList.remove("open");
+    }
+});
