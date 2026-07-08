@@ -1,1 +1,1 @@
-hhbbhbbbb
+console.log("Sprayden website loaded");
