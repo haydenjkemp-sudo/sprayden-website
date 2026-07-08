@@ -79,3 +79,12 @@ window.addEventListener("load", () => {
         loader.classList.add("hide");
     }, 1200);
 });
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add("hide");
+        }, 1200);
+    }
+});
