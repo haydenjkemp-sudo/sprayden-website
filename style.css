@@ -871,3 +871,31 @@ form button{
   background:var(--blue);
   color:white;
 }
+
+.about{
+    position:relative;
+}
+
+.about::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    background:rgba(0,91,255,.08);
+
+    filter:blur(120px);
+
+    border-radius:50%;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+}
