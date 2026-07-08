@@ -647,14 +647,18 @@ form button:hover{
 ========================= */
 
 .float{
-  position:fixed;
-  right:18px;
-  z-index:9999;
-  padding:14px 20px;
-  border-radius:999px;
-  font-weight:900;
-  box-shadow:0 0 32px rgba(0,91,255,.72);
-  transition:.3s;
+    position:fixed;
+    right:18px;
+    z-index:9999;
+    padding:14px 20px;
+    border-radius:999px;
+    font-weight:900;
+    backdrop-filter:blur(18px);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 0 32px rgba(0,91,255,.72);
+    transition:.3s;
 }
 
 .float:hover{
@@ -662,14 +666,14 @@ form button:hover{
 }
 
 .call{
-  bottom:18px;
-  background:var(--blue);
+    bottom:20px;
+    background:var(--blue);
 }
 
 .whats{
-  bottom:78px;
-  background:#111;
-  border:1px solid rgba(255,255,255,.22);
+    bottom:95px;
+    background:#111;
+    border:1px solid rgba(255,255,255,.22);
 }
 
 footer{
