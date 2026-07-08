@@ -1616,3 +1616,8 @@ color:#00b7ff;
     height:320px;
   }
 }
+
+.hero-buttons{
+    margin-top:40px;
+    gap:18px;
+}
