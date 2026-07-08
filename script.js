@@ -1,83 +1,36 @@
-const range = document.getElementById("compareRange");
-const afterLayer = document.getElementById("afterLayer");
-const sliderLine = document.getElementById("sliderLine");
-
-function updateSlider() {
-  if (!range || !afterLayer || !sliderLine) return;
-  afterLayer.style.width = range.value + "%";
-  sliderLine.style.left = range.value + "%";
-}
-
-if (range) {
-  updateSlider();
-  range.addEventListener("input", updateSlider);
-  range.addEventListener("change", updateSlider);
-  range.addEventListener("touchmove", updateSlider);
-}
-
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
 const topbar = document.getElementById("topbar");
-
-if (topbar) {
-  window.addEventListener("scroll", () => {
-    topbar.classList.toggle("scrolled", window.scrollY > 40);
-  });
-}
-
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  reveals.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-      el.classList.add("active");
-      el.classList.add("show");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
 const backTop = document.getElementById("backToTop");
+const loader = document.getElementById("loader");
 
-if (backTop) {
-  window.addEventListener("scroll", () => {
-    backTop.classList.toggle("show", window.scrollY > 500);
-  });
-
-  backTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
-console.log("Sprayden fixed JS loaded");
-
-// Close menu when clicking outside it
-document.addEventListener("click", (e) => {
-    const menu = document.getElementById("navMenu");
-    const toggle = document.querySelector(".menu-toggle");
-
-    if (
-        menu.classList.contains("open") &&
-        !menu.contains(e.target) &&
-        !toggle.contains(e.target)
-    ) {
-        menu.classList.remove("open");
-    }
+menuBtn?.addEventListener("click", () => {
+  navMenu?.classList.toggle("open");
 });
+
 document.querySelectorAll("#navMenu a").forEach(link => {
   link.addEventListener("click", () => {
-    document.getElementById("navMenu").classList.remove("open");
+    navMenu?.classList.remove("open");
   });
-  document.getElementById("backToTop")?.addEventListener("click", () => {
+});
+
+window.addEventListener("scroll", () => {
+  topbar?.classList.toggle("scrolled", window.scrollY > 40);
+  backTop?.classList.toggle("show", window.scrollY > 500);
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add("active", "show");
+    }
+  });
+});
+
+backTop?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-
-    if (loader) {
-        setTimeout(() => {
-            loader.classList.add("hide");
-        }, 1200);
-    }
+  setTimeout(() => {
+    loader?.classList.add("hide");
+  }, 1200);
 });
