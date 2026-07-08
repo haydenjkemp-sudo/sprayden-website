@@ -51,7 +51,6 @@ if (backTop) {
 
 console.log("Sprayden fixed JS loaded");
 
-});
 // Close menu when clicking outside it
 document.addEventListener("click", (e) => {
     const menu = document.getElementById("navMenu");
@@ -72,13 +71,7 @@ document.querySelectorAll("#navMenu a").forEach(link => {
   document.getElementById("backToTop")?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-        loader.classList.add("hide");
-    }, 1200);
-});
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
 
