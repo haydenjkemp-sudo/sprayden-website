@@ -1735,3 +1735,62 @@ color:#00b7ff;
     left: 20px !important;
     bottom: 110px !important;
 }
+/* =========================
+   Premium Loading Screen
+========================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:#05070d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:opacity .7s ease, visibility .7s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-inner{
+    text-align:center;
+}
+
+.loader img{
+    width:220px;
+    max-width:70vw;
+    animation:logoFloat 2s ease-in-out infinite;
+}
+
+.loader p{
+    margin-top:20px;
+    color:#ffffff;
+    letter-spacing:3px;
+    font-size:14px;
+    text-transform:uppercase;
+    opacity:.85;
+}
+
+.loader span{
+    display:block;
+    width:160px;
+    height:4px;
+    margin:25px auto 0;
+    border-radius:20px;
+    background:linear-gradient(90deg,#0066ff,#2ecbff);
+    animation:loadingBar 1.4s infinite;
+}
+
+@keyframes loadingBar{
+    0%{transform:scaleX(.2);}
+    50%{transform:scaleX(1);}
+    100%{transform:scaleX(.2);}
+}
+
+@keyframes logoFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
