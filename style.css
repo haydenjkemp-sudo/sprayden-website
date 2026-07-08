@@ -1000,3 +1000,12 @@ text-align:center;
 }
 
 }
+
+.reveal,
+.hide,
+.reveal.show,
+.hide.show{
+  opacity:1 !important;
+  transform:none !important;
+  visibility:visible !important;
+}
