@@ -1519,3 +1519,31 @@ color:#00b7ff;
     border-bottom:1px solid rgba(255,255,255,.08) !important;
   }
 }
+
+@media(max-width:900px){
+  .nav-links{
+    display:none !important;
+  }
+
+  .nav-links.open{
+    display:flex !important;
+    position:fixed !important;
+    top:95px !important;
+    left:20px !important;
+    right:20px !important;
+    flex-direction:column !important;
+    z-index:999999 !important;
+    background:#050505 !important;
+    border:1px solid rgba(255,255,255,.2) !important;
+    border-radius:22px !important;
+    padding:20px !important;
+    gap:12px !important;
+  }
+
+  .nav-links.open a{
+    color:white !important;
+    font-size:18px !important;
+    font-weight:900 !important;
+    padding:12px !important;
+  }
+}
