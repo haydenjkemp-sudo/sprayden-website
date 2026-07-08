@@ -1009,3 +1009,28 @@ text-align:center;
   transform:none !important;
   visibility:visible !important;
 }
+
+@media(max-width:900px){
+  .trust-strip{
+    grid-template-columns:1fr 1fr;
+    gap:0;
+  }
+
+  .trust-strip span{
+    padding:14px 8px;
+    font-size:16px;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-bottom:70px;
+  }
+
+  h1{
+    font-size:40px;
+  }
+
+  .section{
+    padding:70px 20px;
+  }
+}
