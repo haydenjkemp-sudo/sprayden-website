@@ -4,40 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sprayden | UPVC & Kitchen Spraying Hampshire</title>
-  <meta name="description" content="Professional UPVC, kitchen, composite door, garage door and furniture spraying across Hampshire. Refresh your home without replacing it.">
+  <meta name="description" content="Premium UPVC, kitchen, composite door, garage door and furniture spraying across Hampshire. Refresh your home without replacing it.">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<a class="floating-call" href="tel:07724430225">Call Now</a>
-<a class="floating-whatsapp" href="https://wa.me/447724430225">WhatsApp</a>
+<a href="tel:07724430225" class="float call">Call Now</a>
+<a href="https://wa.me/447724430225" class="float whatsapp">WhatsApp</a>
 
 <header class="hero" id="home">
-  <nav>
-    <img src="logo.png.PNG" alt="Sprayden Logo" class="nav-logo">
+  <div class="blue-orb orb-one"></div>
+  <div class="blue-orb orb-two"></div>
 
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#gallery">Before & After</a>
+  <nav class="nav">
+    <img src="logo.png.PNG" alt="Sprayden Logo">
+    <div>
+      <a href="#gallery">Gallery</a>
       <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
       <a href="#quote">Quote</a>
     </div>
   </nav>
 
   <div class="hero-content">
-    <img src="logo.png.PNG" alt="Sprayden Logo" class="main-logo">
+    <img src="logo.png.PNG" alt="Sprayden Logo" class="main-logo move-in">
 
-    <p class="eyebrow">Premium spraying across Hampshire</p>
+    <p class="eyebrow fade-up">Premium spraying across Hampshire</p>
 
-    <h1>Transform Your UPVC, Kitchen & Doors Without Replacing Them</h1>
+    <h1 class="fade-up">Transform Your UPVC, Kitchen & Doors Without Replacing Them</h1>
 
-    <p class="hero-text">
-      Professional UPVC, kitchen, composite door, garage door and furniture spraying.
+    <p class="hero-text fade-up">
       Factory-quality finishes, free quotes and huge savings compared with replacement.
     </p>
 
-    <div class="buttons">
+    <div class="buttons fade-up">
       <a href="#quote">Get Free Quote</a>
       <a href="tel:07724430225">Call 07724 430225</a>
     </div>
@@ -51,38 +52,47 @@
   <div>Refresh. Don’t Replace.</div>
 </section>
 
-<section id="gallery">
+<section id="gallery" class="section reveal">
   <p class="eyebrow">Real transformation</p>
   <h2>Before & After</h2>
-  <p>Drag the slider to reveal the Sprayden transformation.</p>
+  <p>Drag the slider to reveal the Sprayden finish.</p>
 
   <div class="comparison">
-    <img src="before-window.jpg.jpg" class="before" alt="Before window spraying">
-
-    <div class="after-wrapper">
-      <img src="after-window.jpg.jpg" class="after" alt="After window spraying">
+    <img src="before-window.jpg.jpg" alt="Before" class="before">
+    <div class="after-wrap">
+      <img src="after-window.jpg.jpg" alt="After">
     </div>
-
-    <div class="slider-line"></div>
-    <input type="range" min="0" max="100" value="50" id="compare">
+    <div class="line"></div>
+    <input id="compare" type="range" min="0" max="100" value="50">
   </div>
 </section>
 
-<section id="services">
+<section id="services" class="section reveal">
   <p class="eyebrow">What we spray</p>
   <h2>Professional Spraying Services</h2>
 
   <div class="cards">
-    <div><span>🪟</span><h3>UPVC Windows</h3><p>Modernise faded window frames.</p></div>
-    <div><span>🚪</span><h3>Composite Doors</h3><p>Give your entrance a premium finish.</p></div>
-    <div><span>🍽️</span><h3>Kitchen Spraying</h3><p>Transform your kitchen for less.</p></div>
-    <div><span>🚗</span><h3>Garage Doors</h3><p>Refresh tired garage doors.</p></div>
-    <div><span>🏡</span><h3>Conservatories</h3><p>Bring older conservatories back to life.</p></div>
-    <div><span>🪑</span><h3>Furniture</h3><p>Give furniture a clean modern finish.</p></div>
+    <div><span>🪟</span><h3>UPVC Windows</h3><p>Modernise faded frames.</p></div>
+    <div><span>🚪</span><h3>Composite Doors</h3><p>Premium colour refresh.</p></div>
+    <div><span>🍽️</span><h3>Kitchen Spraying</h3><p>New kitchen look for less.</p></div>
+    <div><span>🚗</span><h3>Garage Doors</h3><p>Restore tired garage doors.</p></div>
+    <div><span>🏡</span><h3>Conservatories</h3><p>Refresh older conservatories.</p></div>
+    <div><span>🪑</span><h3>Furniture</h3><p>Clean modern finishes.</p></div>
   </div>
 </section>
 
-<section class="reviews">
+<section class="section reveal">
+  <p class="eyebrow">Why Sprayden?</p>
+  <h2>Premium Results. Sensible Prices.</h2>
+
+  <div class="cards">
+    <div><h3>Save Money</h3><p>Refresh instead of replacing.</p></div>
+    <div><h3>Factory Finish</h3><p>Smooth, clean and durable.</p></div>
+    <div><h3>Professional Prep</h3><p>Careful masking and spraying.</p></div>
+  </div>
+</section>
+
+<section id="reviews" class="section reviews reveal">
   <p class="eyebrow">Customer feedback</p>
   <h2>What Customers Say</h2>
 
@@ -93,23 +103,22 @@
   </div>
 </section>
 
-<section class="area">
+<section class="section area reveal">
   <p class="eyebrow">Service area</p>
   <h2>Spraying Across Hampshire</h2>
   <p>Covering Southampton, Portsmouth, Winchester, Basingstoke, Eastleigh, Fareham and surrounding areas.</p>
 </section>
 
-<section id="quote">
+<section id="quote" class="section quote reveal">
   <p class="eyebrow">Get started</p>
   <h2>Get Your Free Quote</h2>
   <p>Send your details and we’ll get back to you.</p>
 
-  <form name="quote" method="POST" data-netlify="true" class="quote-form">
+  <form name="quote" method="POST" data-netlify="true">
     <input type="hidden" name="form-name" value="quote">
     <input type="text" name="name" placeholder="Your name" required>
     <input type="tel" name="phone" placeholder="Phone number" required>
     <input type="email" name="email" placeholder="Email address">
-
     <select name="service" required>
       <option value="">What do you need sprayed?</option>
       <option>UPVC Windows</option>
@@ -120,7 +129,6 @@
       <option>Furniture</option>
       <option>Other</option>
     </select>
-
     <textarea name="message" placeholder="Tell us about the job"></textarea>
     <button type="submit">Request Free Quote</button>
   </form>
@@ -132,7 +140,7 @@
 </section>
 
 <footer>
-  <p>© 2026 Sprayden. UPVC & Kitchen Spraying Hampshire.</p>
+  <p>© 2026 Sprayden. Hampshire UPVC & Kitchen Spraying.</p>
 </footer>
 
 <script src="script.js"></script>
