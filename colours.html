@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popular Spray Colours | Sprayden Hampshire</title>
+  <meta name="description" content="Explore popular UPVC, kitchen, garage door and composite door spraying colours from Sprayden.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <img src="logo.png.PNG" alt="Sprayden logo">
+  </a>
+  <a href="contact.html" class="topbar-btn">Free Quote</a>
+</header>
+
+<section class="section quote-page">
+  <p class="eyebrow">Popular Colours</p>
+  <h1>Choose your finish.</h1>
+  <p class="section-text">
+    Popular colours for UPVC windows, kitchens, garage doors, composite doors and furniture.
+  </p>
+
+  <div class="colour-grid">
+    <div><span class="swatch anthracite"></span>Anthracite Grey</div>
+    <div><span class="swatch black"></span>Jet Black</div>
+    <div><span class="swatch white"></span>White</div>
+    <div><span class="swatch green"></span>Chartwell Green</div>
+    <div><span class="swatch navy"></span>Deep Navy</div>
+    <div><span class="swatch cream"></span>Cream</div>
+  </div>
+</section>
+
+<section class="section">
+  <p class="eyebrow">Colour Visualiser</p>
+  <h2>Preview a colour on your photo.</h2>
+  <p class="section-text">
+    Upload a photo, then choose a colour to preview the style. This is only a guide — final colours may vary depending on lighting and surface.
+  </p>
+
+  <div class="visualiser">
+    <input type="file" id="photoUpload" accept="image/*">
+
+    <select id="colourSelect">
+      <option value="rgba(45, 50, 55, 0.45)">Anthracite Grey</option>
+      <option value="rgba(0, 0, 0, 0.45)">Jet Black</option>
+      <option value="rgba(255, 255, 255, 0.35)">White</option>
+      <option value="rgba(180, 210, 185, 0.45)">Chartwell Green</option>
+      <option value="rgba(15, 35, 70, 0.45)">Deep Navy</option>
+    </select>
+
+    <div class="preview-box">
+      <img id="previewImage" src="" alt="">
+      <div id="colourOverlay"></div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:35px;">
+    <a href="contact.html" class="btn primary">Request Free Quote</a>
+  </div>
+</section>
+
+<footer id="footer">
+  <img src="logo.png.PNG" alt="Sprayden Logo">
+  <p>© 2026 Sprayden. All Rights Reserved.</p>
+</footer>
+
+<script>
+const upload = document.getElementById("photoUpload");
+const preview = document.getElementById("previewImage");
+const overlay = document.getElementById("colourOverlay");
+const colourSelect = document.getElementById("colourSelect");
+
+upload.addEventListener("change", function () {
+  const file = this.files[0];
+  if (!file) return;
+
+  preview.src = URL.createObjectURL(file);
+});
+
+colourSelect.addEventListener("change", function () {
+  overlay.style.background = this.value;
+});
+
+overlay.style.background = colourSelect.value;
+</script>
+
+</body>
+</html>
