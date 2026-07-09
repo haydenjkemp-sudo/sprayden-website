@@ -1999,3 +1999,21 @@ grid-template-columns:repeat(4,1fr);
   opacity: 1;
   visibility: visible;
 }
+.quote-page {
+  padding-top: 150px;
+}
+
+.quote-form {
+  max-width: 720px;
+  margin: 40px auto 0;
+  display: grid;
+  gap: 18px;
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border
