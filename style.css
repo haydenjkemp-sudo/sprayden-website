@@ -2017,3 +2017,44 @@ grid-template-columns:repeat(4,1fr);
   padding: 18px 20px;
   border-radius: 18px;
   border
+  
+  .visualiser {
+  max-width: 720px;
+  margin: 40px auto 0;
+  display: grid;
+  gap: 18px;
+}
+
+.visualiser input,
+.visualiser select {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.preview-box {
+  position: relative;
+  min-height: 300px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.preview-box img {
+  width: 100%;
+  display: block;
+}
+
+#colourOverlay {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.swatch.navy { background: #0f2346; }
+.swatch.cream { background: #e8dfc7; }
