@@ -75,3 +75,17 @@ if (statsSection) {
 
     observer.observe(statsSection);
 }
+const backToTop = document.getElementById("backToTop");
+
+if (backToTop) {
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    backToTop.classList.toggle("show", window.scrollY > 300);
+  });
+}
