@@ -1894,3 +1894,17 @@ color:#00b7ff;
         text-align: center;
     }
 }
+.gallery {
+  text-align: center;
+}
+
+.gallery .section-text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery .before-after-grid,
+.gallery .project-grid {
+  margin-left: auto;
+  margin-right: auto;
+}
