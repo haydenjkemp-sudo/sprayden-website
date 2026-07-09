@@ -1886,7 +1886,7 @@ color:#00b7ff;
 @media (max-width: 768px) {
     .sticky-quote {
         right: 15px;
-        bottom: 15px;
+        bottom: 90px;
         width: calc(100% - 30px);
         text-align: center;
     }
