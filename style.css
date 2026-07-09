@@ -1959,3 +1959,24 @@ grid-template-columns:repeat(4,1fr);
     margin-top: 8px;
   }
 }
+@media (max-width: 768px) {
+  .hero {
+    min-height: 86vh;
+    padding-top: 40px;
+  }
+
+  .hero-content img {
+    max-width: 260px;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 10vw, 3.7rem);
+    line-height: 1.05;
+  }
+
+  .hero-text {
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+}
