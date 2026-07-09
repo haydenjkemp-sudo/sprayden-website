@@ -75,25 +75,3 @@ if (statsSection) {
 
     observer.observe(statsSection);
 }
-const backToTop = document.getElementById("backToTop");
-
-if (backToTop) {
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-
-  window.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const pageHeight = document.documentElement.scrollHeight;
-
-    if (scrollPosition > pageHeight * 0.9) {
-        backToTop.classList.add("show");
-    } else {
-        backToTop.classList.remove("show");
-    }
-});
-  });
-}
