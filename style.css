@@ -1961,7 +1961,7 @@ grid-template-columns:repeat(4,1fr);
 }
 @media (max-width: 768px) {
   .hero {
-    min-height: 86vh;
+    min-height: 80vh;
     padding-top: 40px;
   }
 
@@ -1979,4 +1979,7 @@ grid-template-columns:repeat(4,1fr);
     font-size: 1.05rem;
     line-height: 1.55;
   }
+}
+.hero-text{
+    margin-top:20px;
 }
