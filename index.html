@@ -622,6 +622,23 @@ Professional preparation. Premium coatings. Outstanding attention to detail. Eve
     Get a Free Quote
 </a>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('form[name="quote"]');
+
+    if (form) {
+        form.addEventListener("submit", function () {
+            if (typeof gtag === "function") {
+                gtag("event", "quote_request", {
+                    event_category: "Lead",
+                    event_label: "Quote Form"
+                });
+            }
+        });
+    }
+});
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>
