@@ -1908,3 +1908,36 @@ color:#00b7ff;
   margin-left: auto;
   margin-right: auto;
 }
+.trust-strip{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    max-width:1100px;
+    margin:0 auto;
+    padding:35px 20px;
+}
+
+.trust-item{
+    background:#111;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    padding:18px;
+    text-align:center;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
+
+.trust-item:hover{
+    border-color:#1d8cff;
+    box-shadow:0 0 25px rgba(29,140,255,.25);
+    transform:translateY(-3px);
+}
+
+@media(min-width:768px){
+
+.trust-strip{
+grid-template-columns:repeat(4,1fr);
+}
+
+}
