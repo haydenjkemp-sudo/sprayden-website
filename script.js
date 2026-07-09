@@ -86,6 +86,14 @@ if (backToTop) {
   });
 
   window.addEventListener("scroll", () => {
-    backToTop.classList.toggle("show", window.scrollY > 300);
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    if (scrollPosition > pageHeight * 0.9) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+});
   });
 }
