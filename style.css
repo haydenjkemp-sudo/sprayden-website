@@ -1941,3 +1941,21 @@ grid-template-columns:repeat(4,1fr);
 }
 
 }
+@media (max-width: 768px) {
+  .quote form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .quote input,
+  .quote select,
+  .quote textarea,
+  .quote button {
+    width: 100%;
+  }
+
+  .quote button {
+    margin-top: 8px;
+  }
+}
