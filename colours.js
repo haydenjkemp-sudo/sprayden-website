@@ -111,7 +111,7 @@ function findConnectedArea(startX, startY) {
     const targetGreen = data[startIndex + 1];
     const targetBlue = data[startIndex + 2];
 
-    const threshold = 65;
+    const threshold = 115;
     const mask = new Uint8Array(width * height);
     const visited = new Uint8Array(width * height);
     const stack = [startPixel];
@@ -159,7 +159,7 @@ function applyColour() {
     );
 
     const selectedRgb = hexToRgb(colour);
-    const strength = 0.72;
+    const strength = 0.88;
 
     for (let pixel = 0; pixel < selectedArea.length; pixel++) {
         if (!selectedArea[pixel]) continue;
