@@ -2492,3 +2492,32 @@ grid-template-columns:repeat(4,1fr);
         grid-template-columns: 1fr !important;
     }
 }
+
+/* FINAL SPACING FIX */
+
+.visualiser-section {
+    padding-top: 48px !important;
+    padding-bottom: 170px !important;
+    overflow: visible !important;
+}
+
+.visualiser-beta,
+.visualiser-notice {
+    margin-top: 0 !important;
+    margin-bottom: 34px !important;
+}
+
+.smart-visualiser {
+    margin-top: 0 !important;
+}
+
+.visualiser-note {
+    padding-bottom: 40px !important;
+}
+
+/* Keep action buttons clear of the browser bar */
+@media (max-width: 520px) {
+    .visualiser-actions {
+        margin-bottom: 20px !important;
+    }
+}
