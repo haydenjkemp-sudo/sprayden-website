@@ -34,30 +34,98 @@
   </div>
 </section>
 
+<section class="section visualiser-section">
+  <p class="eyebrow">Interactive Colour Visualiser</p>
+
+  <h2>See a new colour on your own photo.</h2>
+
+  <p class="section-text">
+    Take or upload a clear photo. Tap the window, door, garage door
+    or cupboard you want to recolour, then choose your preferred finish.
+  </p>
+
+  <div class="smart-visualiser">
+
+    <label class="visualiser-upload">
+      Take or choose a photo
+      <input
+        type="file"
+        id="visualiserUpload"
+        accept="image/*"
+        capture="environment"
+      >
+    </label>
+
+    <p id="visualiserStatus" class="visualiser-status">
+      Upload a photo to begin.
+    </p>
+
+    <div class="visualiser-canvas-wrap">
+      <img
+        id="visualiserImage"
+        alt="Uploaded colour preview"
+        hidden
+      >
+
+      <canvas id="visualiserCanvas"></canvas>
+    </div>
+
+    <p class="visualiser-help">
+      Once the photo appears, tap the part you want to change.
+    </p>
+
+    <div class="visualiser-colours">
+      <button type="button" data-colour="#383e42">
+        Anthracite Grey
+      </button>
+
+      <button type="button" data-colour="#111111">
+        Jet Black
+      </button>
+
+      <button type="button" data-colour="#efeee8">
+        White
+      </button>
+
+      <button type="button" data-colour="#b7c6ad">
+        Chartwell Green
+      </button>
+
+      <button type="button" data-colour="#d4ccb6">
+        Cream
+      </button>
+
+      <button type="button" data-colour="#24364b">
+        Deep Navy
+      </button>
+    </div>
+
+    <div class="visualiser-actions">
+      <button
+        type="button"
+        id="resetVisualiser"
+        class="btn secondary"
+      >
+        Reset
+      </button>
+
+      <a href="contact.html" class="btn primary">
+        Request This Colour
+      </a>
+    </div>
+
+  </div>
+
+  <p class="visualiser-note">
+    This preview is a guide only. Lighting, reflections, surface condition
+    and screen settings can affect how the final finish appears.
+  </p>
+</section>
+
 <footer id="footer">
   <img src="logo.png.PNG" alt="Sprayden Logo">
   <p>© 2026 Sprayden. All Rights Reserved.</p>
 </footer>
-
-<script>
-const upload = document.getElementById("photoUpload");
-const preview = document.getElementById("previewImage");
-const overlay = document.getElementById("colourOverlay");
-const colourSelect = document.getElementById("colourSelect");
-
-upload.addEventListener("change", function () {
-  const file = this.files[0];
-  if (!file) return;
-
-  preview.src = URL.createObjectURL(file);
-});
-
-colourSelect.addEventListener("change", function () {
-  overlay.style.background = this.value;
-});
-
-overlay.style.background = colourSelect.value;
-</script>
 
 </body>
 </html>
