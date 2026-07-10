@@ -1,7 +1,7 @@
 const upload = document.getElementById("visualiserUpload");
 const canvas = document.getElementById("visualiserCanvas");
 const ctx = canvas.getContext("2d");
-const img = document.getElementById("visualiserImage");
+const img = new Image();
 const status = document.getElementById("visualiserStatus");
 
 let painting = false;
@@ -19,10 +19,19 @@ upload.addEventListener("change", () => {
 
     img.onload = () => {
 
-        canvas.width = img.width;
-        canvas.height = img.height;
+        const maxWidth = 900;
+const maxHeight = 650;
 
-        ctx.drawImage(img, 0, 0);
+const scale = Math.min(
+  1,
+  maxWidth / img.naturalWidth,
+  maxHeight / img.naturalHeight
+);
+
+canvas.width = Math.round(img.naturalWidth * scale);
+canvas.height = Math.round(img.naturalHeight * scale);
+
+ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
         status.textContent =
             "Photo loaded. Tap the window, door or cupboard you want to recolour.";
