@@ -2195,3 +2195,220 @@ grid-template-columns:repeat(4,1fr);
     line-height: 1.6;
     text-align: center;
 }
+
+/* =========================================
+   SPRAYDEN VISUALISER — CLEAN MOBILE UI
+   ========================================= */
+
+.visualiser-section {
+    padding: 42px 16px 130px;
+    text-align: center;
+}
+
+.smart-visualiser {
+    width: min(100%, 760px);
+    margin: 28px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Item selector */
+.visualiser-type {
+    text-align: left;
+}
+
+.visualiser-type label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.visualiser-type select {
+    width: 100%;
+    min-height: 56px;
+    padding: 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    background: #181818;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 650;
+}
+
+/* Upload card */
+.visualiser-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 20px;
+    background: #181818;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.visualiser-upload input {
+    width: 100%;
+    font-size: 15px;
+}
+
+/* Status text */
+.visualiser-status {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+/* Remove the huge empty image space */
+.visualiser-canvas-wrap {
+    position: relative;
+    width: 100%;
+    min-height: 0 !important;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: transparent;
+}
+
+#visualiserImage {
+    display: none !important;
+}
+
+#visualiserCanvas {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 56vh;
+    object-fit: contain;
+    border-radius: 20px;
+    touch-action: none;
+}
+
+/* Instruction */
+.visualiser-help {
+    margin: 4px 0 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+/* Colour choices — compact like app controls */
+.visualiser-colours {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.visualiser-colours button {
+    min-height: 54px;
+    padding: 12px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    background: #1b1b1b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 750;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.visualiser-colours button:active {
+    transform: scale(0.98);
+}
+
+.visualiser-colours button.active,
+.visualiser-colours button[aria-pressed="true"] {
+    border-color: #129cff;
+    background: rgba(0, 105, 255, 0.22);
+    box-shadow: 0 0 0 1px rgba(18, 156, 255, 0.25);
+}
+
+/* Actions */
+.visualiser-actions {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.visualiser-actions .btn {
+    min-height: 56px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.visualiser-actions .secondary {
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    background: #171717;
+    color: #fff;
+}
+
+.visualiser-actions .primary {
+    border: 0;
+    background: #0866ff;
+    color: #fff;
+    box-shadow: 0 8px 28px rgba(0, 102, 255, 0.28);
+}
+
+/* Disclaimer */
+.visualiser-note {
+    margin: 2px 0 0;
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+/* Mobile refinements */
+@media (max-width: 520px) {
+    .visualiser-section {
+        padding: 32px 12px 120px;
+    }
+
+    .visualiser-section h2 {
+        font-size: clamp(32px, 10vw, 46px);
+        line-height: 1.04;
+    }
+
+    .visualiser-section .section-text {
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    #visualiserCanvas {
+        max-height: 48vh;
+    }
+
+    .visualiser-colours {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .visualiser-colours button {
+        min-height: 50px;
+        font-size: 13px;
+    }
+
+    .visualiser-actions {
+        position: sticky;
+        bottom: 10px;
+        z-index: 20;
+        padding: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 22px;
+        background: rgba(13, 13, 13, 0.9);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 14px 45px rgba(0, 0, 0, 0.5);
+    }
+}
