@@ -2521,3 +2521,24 @@ grid-template-columns:repeat(4,1fr);
         margin-bottom: 20px !important;
     }
 }
+
+.colour-btn{
+    min-height:58px;
+    padding:16px;
+    font-size:18px;
+    border-radius:18px;
+}
+
+.colour-grid{
+    margin-top:20px;
+}
+
+background:#111;
+border:1px solid #2b2b2b;
+
+box-shadow:
+0 0 25px rgba(32,110,255,.35);
+
+.visualiser-note{
+    padding-bottom:120px;
+}
