@@ -2058,3 +2058,31 @@ grid-template-columns:repeat(4,1fr);
 
 .swatch.navy { background: #0f2346; }
 .swatch.cream { background: #e8dfc7; }
+
+/* SMART COLOUR VISUALISER */
+
+.visualiser-section {
+  text-align: center;
+}
+
+.smart-visualiser {
+  width: min(100%, 760px);
+  margin: 40px auto 0;
+  display: grid;
+  gap: 20px;
+}
+
+.visualiser-upload {
+  display: block;
+  padding: 20px;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.visualiser-upload input {
+  display: block;
+  width:
