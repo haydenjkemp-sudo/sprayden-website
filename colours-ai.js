@@ -91,7 +91,12 @@ upload.addEventListener("change", function () {
     canvas.height = Math.round(
       sourceImage.naturalHeight * scale
     );
+    
+document
 
+  .querySelector(".visualiser-canvas-wrap")
+
+  ?.classList.add("has-photo");
     ctx.clearRect(
       0,
       0,
