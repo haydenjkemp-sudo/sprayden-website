@@ -2166,3 +2166,20 @@ grid-template-columns:repeat(4,1fr);
     grid-template-columns: 1fr !important;
   }
 }
+.visualiser-service {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+  color: #fff;
+  font-weight: 800;
+}
+
+.visualiser-service select {
+  width: 100%;
+  padding: 17px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  background: #191919;
+  color: #fff;
+  font: inherit;
+}
