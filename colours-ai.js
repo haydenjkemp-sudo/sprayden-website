@@ -54,3 +54,81 @@ async function initialiseSegmenter() {
 }
 
 initialiseSegmenter();
+
+upload.addEventListener("change", function () {
+  const file = upload.files && upload.files[0];
+
+  if (!file) {
+    return;
+  }
+
+  if (!serviceSelect.value) {
+    status.textContent =
+      "Choose what you would like to recolour first.";
+
+    upload.value = "";
+    return;
+  }
+
+  const imageUrl = URL.createObjectURL(file);
+
+  status.textContent = "Preparing your photo...";
+
+  sourceImage.onload = function () {
+    const maxWidth = 900;
+    const maxHeight = 700;
+
+    const scale = Math.min(
+      1,
+      maxWidth / sourceImage.naturalWidth,
+      maxHeight / sourceImage.naturalHeight
+    );
+
+    canvas.width = Math.round(
+      sourceImage.naturalWidth * scale
+    );
+
+    canvas.height = Math.round(
+      sourceImage.naturalHeight * scale
+    );
+
+    ctx.clearRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+    ctx.drawImage(
+      sourceImage,
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+    originalPhoto = ctx.getImageData(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+    selectedMask = null;
+    photoLoaded = true;
+
+    status.textContent =
+      "Photo ready. Tap the item you want to recolour.";
+
+    URL.revokeObjectURL(imageUrl);
+  };
+
+  sourceImage.onerror = function () {
+    status.textContent =
+      "That photo could not be opened. Please try another.";
+
+    URL.revokeObjectURL(imageUrl);
+  };
+
+  sourceImage.src = imageUrl;
+});
