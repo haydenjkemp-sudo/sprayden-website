@@ -205,3 +205,152 @@ canvas.addEventListener("click", function (event) {
       "Detection failed. Try tapping the centre of the item again.";
   }
 });
+
+function hexToRgb(hex) {
+  const cleanHex = hex.replace("#", "");
+
+  return {
+    r: parseInt(cleanHex.substring(0, 2), 16),
+    g: parseInt(cleanHex.substring(2, 4), 16),
+    b: parseInt(cleanHex.substring(4, 6), 16)
+  };
+}
+
+function applySelectedColour() {
+  if (!originalPhoto || !selectedMask) {
+    return;
+  }
+
+  const output = new ImageData(
+    new Uint8ClampedArray(originalPhoto.data),
+    originalPhoto.width,
+    originalPhoto.height
+  );
+
+  const colour = hexToRgb(selectedColour);
+
+  const canvasWidth = originalPhoto.width;
+  const canvasHeight = originalPhoto.height;
+
+  const maskWidth = selectedMask.width;
+  const maskHeight = selectedMask.height;
+  const maskData = selectedMask.data;
+
+  for (let y = 0; y < canvasHeight; y++) {
+    const maskY = Math.min(
+      maskHeight - 1,
+      Math.floor((y / canvasHeight) * maskHeight)
+    );
+
+    for (let x = 0; x < canvasWidth; x++) {
+      const maskX = Math.min(
+        maskWidth - 1,
+        Math.floor((x / canvasWidth) * maskWidth)
+      );
+
+      const maskIndex = maskY * maskWidth + maskX;
+
+      /*
+        MediaPipe uses 0 for the background.
+        Values above 0 belong to the selected object.
+      */
+      if (maskData[maskIndex] === 0) {
+        continue;
+      }
+
+      const pixelIndex = (y * canvasWidth + x) * 4;
+
+      const originalRed = originalPhoto.data[pixelIndex];
+      const originalGreen = originalPhoto.data[pixelIndex + 1];
+      const originalBlue = originalPhoto.data[pixelIndex + 2];
+
+      const brightness =
+        (
+          originalRed * 0.299 +
+          originalGreen * 0.587 +
+          originalBlue * 0.114
+        ) / 255;
+
+      /*
+        Keeps the object's existing light, shadow and texture.
+      */
+      const shade = 0.4 + brightness * 0.75;
+      const strength = 0.82;
+
+      output.data[pixelIndex] =
+        originalRed * (1 - strength) +
+        colour.r * shade * strength;
+
+      output.data[pixelIndex + 1] =
+        originalGreen * (1 - strength) +
+        colour.g * shade * strength;
+
+      output.data[pixelIndex + 2] =
+        originalBlue * (1 - strength) +
+        colour.b * shade * strength;
+    }
+  }
+
+  ctx.putImageData(output, 0, 0);
+}
+
+colourButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    selectedColour = button.dataset.colour;
+
+    colourButtons.forEach(function (item) {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    if (!photoLoaded || !originalPhoto) {
+      status.textContent =
+        "Choose an item and upload a photo first.";
+      return;
+    }
+
+    if (!selectedMask) {
+      status.textContent =
+        "Tap the item in your photo before choosing a colour.";
+      return;
+    }
+
+    applySelectedColour();
+
+    status.textContent =
+      "Colour preview applied. Choose another colour or tap a different item.";
+  });
+});
+
+resetButton.addEventListener("click", function () {
+  if (originalPhoto) {
+    ctx.putImageData(originalPhoto, 0, 0);
+  }
+
+  selectedMask = null;
+
+  colourButtons.forEach(function (button) {
+    button.classList.remove("active");
+  });
+
+  status.textContent = photoLoaded
+    ? "Preview reset. Tap the item you want to recolour."
+    : "Choose an item, then upload a photo.";
+});
+
+serviceSelect.addEventListener("change", function () {
+  selectedMask = null;
+
+  if (originalPhoto) {
+    ctx.putImageData(originalPhoto, 0, 0);
+  }
+
+  colourButtons.forEach(function (button) {
+    button.classList.remove("active");
+  });
+
+  status.textContent = photoLoaded
+    ? "Item changed. Tap the item you want to recolour."
+    : "Upload a photo to begin.";
+});
