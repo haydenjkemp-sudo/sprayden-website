@@ -132,3 +132,76 @@ upload.addEventListener("change", function () {
 
   sourceImage.src = imageUrl;
 });
+
+canvas.addEventListener("click", function (event) {
+  if (!segmenter) {
+    status.textContent =
+      "The AI visualiser is still loading. Please wait.";
+    return;
+  }
+
+  if (!photoLoaded || !originalPhoto) {
+    status.textContent = "Choose an item and upload a photo first.";
+    return;
+  }
+
+  if (!serviceSelect.value) {
+    status.textContent =
+      "Choose what you would like to recolour first.";
+    return;
+  }
+
+  const canvasBox = canvas.getBoundingClientRect();
+
+  const normalisedX =
+    (event.clientX - canvasBox.left) / canvasBox.width;
+
+  const normalisedY =
+    (event.clientY - canvasBox.top) / canvasBox.height;
+
+  status.textContent =
+    "Detecting the selected item. This may take a moment...";
+
+  /* Ensure the AI analyses the original photo */
+  ctx.putImageData(originalPhoto, 0, 0);
+
+  try {
+    segmenter.segment(
+      canvas,
+      {
+        keypoint: {
+          x: Math.max(0, Math.min(1, normalisedX)),
+          y: Math.max(0, Math.min(1, normalisedY))
+        }
+      },
+      function (result) {
+        if (!result.categoryMask) {
+          status.textContent =
+            "The selected item could not be detected. Try tapping its centre.";
+          return;
+        }
+
+        const categoryMask = result.categoryMask;
+        const maskValues = categoryMask.getAsUint8Array();
+
+        selectedMask = {
+          data: new Uint8Array(maskValues),
+          width: categoryMask.width,
+          height: categoryMask.height
+        };
+
+        categoryMask.close();
+
+        status.textContent =
+          "Item detected. Choose a colour below.";
+      }
+    );
+  } catch (error) {
+    console.error(error);
+
+    ctx.putImageData(originalPhoto, 0, 0);
+
+    status.textContent =
+      "Detection failed. Try tapping the centre of the item again.";
+  }
+});
