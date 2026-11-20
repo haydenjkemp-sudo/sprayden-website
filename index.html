@@ -1,56 +1,280 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6M4JXZV8X0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6M4JXZV8X0');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M4JXZV8X0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6M4JXZV8X0');
+  </script>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Sprayden",
-  "url": "https://www.sprayden.co.uk",
-  "logo": "https://www.sprayden.co.uk/logo.png.PNG",
-  "image": "https://www.sprayden.co.uk/logo.png.PNG",
-  "telephone": "+447724430225",
-  "email": "info@sprayden.co.uk",
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "Hampshire"
-  },
-  "sameAs": [
-    "https://facebook.com/Spraydenofficial",
-    "https://www.instagram.com/spraydenofficial",
-    "https://www.tiktok.com/@spraydenofficial"
-  ],
-  "description": "Professional kitchen, UPVC window, garage door and composite door spraying across Hampshire.",
-  "priceRange": "££"
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Sprayden",
+    "url": "https://www.sprayden.co.uk",
+    "logo": "https://www.sprayden.co.uk/logo.png.PNG",
+    "image": "https://www.sprayden.co.uk/logo.png.PNG",
+    "telephone": "+447724430225",
+    "email": "info@sprayden.co.uk",
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Hampshire"
+    },
+    "sameAs": [
+      "https://facebook.com/Spraydenofficial",
+      "https://www.instagram.com/spraydenofficial",
+      "https://www.tiktok.com/@spraydenofficial"
+    ],
+    "description": "Specialist spraying, interior painting and decorating, exterior painting, and commercial and agricultural coatings across Hampshire.",
+    "priceRange": "££"
+  }
+  </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kitchen, UPVC & Garage Door Spraying Hampshire | Sprayden</title>
-  <meta name="description" content="Professional kitchen, UPVC window, garage door and composite door spraying across Hampshire. Transform your home for a fraction of the cost of replacement. Get a free quote from Sprayden today.">
-  <meta name="keywords" content="UPVC spraying Hampshire, kitchen spraying Hampshire, composite door spraying Hampshire, garage door spraying Hampshire, furniture spraying Hampshire, Sprayden">
+  <title>Spraying, Painting & Decorating Hampshire | Sprayden</title>
+
+  <meta name="description" content="Sprayden provides specialist spraying, interior painting and decorating, exterior painting, and commercial and agricultural coatings across Hampshire. Get a free quote.">
+
+  <meta name="keywords" content="spraying Hampshire, kitchen spraying, UPVC spraying, painting and decorating Hampshire, exterior painting, commercial spraying, Sprayden">
+
   <link rel="canonical" href="https://www.sprayden.co.uk/">
 
- <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* NEW HOMEPAGE DESIGN */
+
+    .home-hero {
+      min-height: 76vh;
+      padding: 76px 22px;
+      background:
+        linear-gradient(115deg, rgba(3,8,20,.96), rgba(3,14,38,.78)),
+        radial-gradient(circle at 80% 20%, rgba(0,91,255,.38), transparent 38%),
+        #050505;
+    }
+
+    .home-hero .hero-content {
+      max-width: 1050px;
+    }
+
+    .home-hero .hero-logo {
+      width: min(390px, 78vw);
+      margin: 0 auto 24px;
+    }
+
+    .home-hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.02;
+    }
+
+    .home-hero h1 span {
+      color: #55a0ff;
+    }
+
+    .home-hero .hero-text {
+      max-width: 760px;
+      font-size: 19px;
+    }
+
+    .home-services {
+      padding: 86px 24px 92px;
+      background: #080808;
+    }
+
+    .home-services-heading {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 38px;
+    }
+
+    .home-services-heading h2 {
+      margin-bottom: 14px;
+    }
+
+    .home-services-heading > p:last-child {
+      color: #cfcfcf;
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .home-service-grid {
+      max-width: 1320px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .home-service-panel {
+      position: relative;
+      isolation: isolate;
+      min-height: 390px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 25px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background-size: cover;
+      background-position: center;
+      transition: transform .35s, border-color .35s;
+    }
+
+    .home-service-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.22)),
+        linear-gradient(0deg, rgba(0,0,0,.65), transparent 70%);
+    }
+
+    .home-service-panel:hover {
+      transform: translateY(-5px);
+      border-color: #3682ff;
+    }
+
+    /* Service photographs */
+
+    .spray-panel {
+      background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1500&q=85');
+    }
+
+    .interior-panel {
+      background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=85');
+    }
+
+    .exterior-panel {
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1500&q=85');
+    }
+
+    .commercial-panel {
+      background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1500&q=85');
+    }
+
+    .home-service-copy {
+      padding: 34px;
+      max-width: 680px;
+    }
+
+    .home-service-copy > span {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 900;
+      color: #79b3ff;
+    }
+
+    .home-service-copy h3 {
+      font-size: clamp(28px, 3.2vw, 42px);
+      line-height: 1.05;
+      margin: 12px 0;
+    }
+
+    .home-service-copy p {
+      max-width: 570px;
+      color: #ededed;
+      font-size: 16px;
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .home-service-copy b {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #005bff;
+      padding: 13px 19px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .home-service-cta {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .mobile-quote {
+      display: none;
+    }
+
+    @media(max-width:760px) {
+      .home-hero {
+        min-height: auto;
+        padding: 54px 18px 62px;
+      }
+
+      .home-hero .hero-logo {
+        width: 78vw;
+      }
+
+      .home-hero h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+      }
+
+      .home-hero .hero-text {
+        font-size: 17px;
+      }
+
+      .home-services {
+        padding: 64px 16px 80px;
+      }
+
+      .home-service-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .home-service-panel {
+        min-height: 330px;
+        border-radius: 20px;
+      }
+
+      .home-service-copy {
+        padding: 25px 22px;
+      }
+
+      .home-service-copy h3 {
+        font-size: 31px;
+      }
+
+      .home-service-copy p {
+        font-size: 15px;
+      }
+
+      .mobile-quote {
+        display: block;
+        position: fixed;
+        z-index: 10000;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        text-align: center;
+        padding: 15px 20px;
+        border-radius: 999px;
+        background: #005bff;
+        color: white;
+        font-weight: 900;
+        box-shadow: 0 8px 30px rgba(0,91,255,.55);
+      }
+
+      body {
+        padding-bottom: 68px;
+      }
+    }
+  </style>
 </head>
 
-
 <body>
+
 <div id="loader" class="loader">
   <div class="loader-inner">
     <img src="logo.png.PNG" alt="Sprayden logo">
@@ -64,141 +288,178 @@
     <img src="logo.png.PNG" alt="Sprayden logo">
   </a>
 
- <button class="menu-btn" id="menuBtn">
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">
     ☰
-</button>
-  
+  </button>
+
   <nav class="nav-links" id="navMenu">
-    
-  <a href="#home" onclick="document.getElementById('navMenu').classList.remove('active')">Home</a>
-
-<a href="#services" onclick="document.getElementById('navMenu').classList.remove('active')">Services</a>
-
-<a href="gallery.html" onclick="document.getElementById('navMenu').classList.remove('active')">Gallery</a>
-
-<a href="colours.html">Colours</a>
-
-<a href="about.html">About</a>
-
-<a href="index.html#reviews">Reviews</a>
-
-<a href="contact.html" onclick="document.getElementById('navMenu').classList.remove('active')">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="colours.html">Colours</a>
+    <a href="about.html">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <a href="contact.html" class="topbar-btn">Free Quote</a>
-  
 </header>
 
-<section class="hero" id="home">
-  <div class="orb orb-one"></div>
-  <div class="orb orb-two"></div>
-  <div class="moving-grid"></div>
-  <div class="spray-dots"></div>
+<!-- HERO -->
 
+<section class="hero home-hero" id="home">
   <div class="hero-content">
-    <img src="logo.png.PNG" alt="Sprayden UPVC spraying Hampshire" class="hero-logo">
 
-    <p class="eyebrow">Premium spraying across Hampshire</p>
+    <img src="logo.png.PNG" alt="Sprayden" class="hero-logo">
 
-    <h1>Kitchen, UPVC & Garage Door Spraying Across Hampshire</h1>
+    <p class="eyebrow">Professional finishes across Hampshire</p>
+
+    <h1>
+      Transform your space.<br>
+      <span>Refresh. Don't replace.</span>
+    </h1>
 
     <p class="hero-text">
-Premium UPVC, kitchen, composite door and garage door spraying across Hampshire.
-Factory-quality finishes without the cost of replacement.
-</p>
+      Specialist spraying, painting and decorating for homes,
+      businesses and agricultural properties. Quality preparation,
+      professional finishes and a fresh new look.
+    </p>
 
     <div class="hero-buttons">
-      <a href="contact.html" class="btn primary">Get Free Quote</a>
+      <a href="contact.html" class="btn primary">Get a Free Quote</a>
       <a href="tel:07724430225" class="btn secondary">Call 07724 430225</a>
     </div>
 
     <div class="hero-badges">
-  <span>10-Year Guarantee</span>
-  <span>Fully Insured</span>
-  <span>Hampshire Based</span>
-  <span>Free Quotes</span>
-</div>
-  </section>
- 
-<section class="section services reveal" id="services">
-  <p class="eyebrow">What we spray</p>
-  <h2>Professional spraying services.</h2>
+      <span>Fully Insured</span>
+      <span>Hampshire Based</span>
+      <span>Free Quotes</span>
+    </div>
 
-  <div class="service-grid">
-    <article class="service-card">
-      <i class="fa-regular fa-window-maximize service-icon"></i>
-      <h3>UPVC Window Spraying</h3>
-      <p>Modernise faded frames with a smooth, durable sprayed finish.</p>
-    </article>
-
-    <article class="service-card">
-      <i class="fa-solid fa-kitchen-set service-icon"></i>
-      <h3>Kitchen Spraying</h3>
-      <p>Transform cupboards and doors without the cost of a new kitchen.</p>
-    </article>
-
-    <article class="service-card">
-      <i class="fa-solid fa-door-open service-icon"></i>
-      <h3>Composite Door Spraying</h3>
-      <p>Give your entrance a premium colour refresh.</p>
-    </article>
-
-    <article class="service-card">
-      <i class="fa-solid fa-warehouse service-icon"></i>
-      <h3>Garage Door Spraying</h3>
-      <p>Restore tired garage doors with a clean, modern coating.</p>
-    </article>
-
-    <article class="service-card">
-      <i class="fa-solid fa-house service-icon"></i>
-      <h3>Conservatory Spraying</h3>
-      <p>Bring older conservatories back to life.</p>
-    </article>
-
-    <article class="service-card">
-      <i class="fa-solid fa-couch service-icon"></i>
-      <h3>Furniture Spraying</h3>
-      <p>Refresh furniture with a smooth, stylish factory-style finish.</p>
-    </article>
   </div>
 </section>
 
-<section class="section gallery reveal" id="gallery">
-<p class="eyebrow">Recent Projects</p>
-<h2>See the Sprayden difference.</h2>
+<!-- FOUR MAIN SERVICES -->
 
-<p class="section-text">
-    Every project is professionally prepared and factory-finished for a long-lasting result. Here's a small selection of our recent work across Hampshire.
-</p>
+<section class="home-services" id="services">
 
-  <div class="before-after-grid">
-    
-   <div class="ba-card">
-    <span>Before • UPVC Window Spraying</span>
-    <img src="before-window.jpg.jpg" alt="Before UPVC window spraying">
-</div>
+  <div class="home-services-heading">
+    <p class="eyebrow">What we do</p>
+    <h2>One team. Four ways to transform.</h2>
+    <p>
+      From a single front door to a full property refresh,
+      explore our specialist services.
+    </p>
+  </div>
 
-    <div class="ba-card">
-    <span>After • Black Finish</span>
-    <img src="after-window.jpg.jpg" alt="After UPVC window spraying">
-</div>
-  
-  <div style="text-align:center; margin-top:30px;">
-    <a href="gallery.html" class="btn primary">
-        Explore Our Gallery →
+  <div class="home-service-grid">
+
+    <a class="home-service-panel spray-panel" href="contact.html">
+      <div class="home-service-copy">
+        <span>01 / SPECIALIST FINISHES</span>
+        <h3>Specialist Spraying</h3>
+        <p>
+          Kitchens, UPVC, windows, doors, conservatories,
+          garage doors, furniture, fascias and soffits.
+        </p>
+        <b>Enquire about spraying <i class="fa-solid fa-arrow-right"></i></b>
+      </div>
     </a>
-</div>
+
+    <a class="home-service-panel interior-panel" href="contact.html">
+      <div class="home-service-copy">
+        <span>02 / INSIDE YOUR HOME</span>
+        <h3>Interior Painting & Decorating</h3>
+        <p>
+          Walls, ceilings, woodwork, rooms, staircases,
+          doors and interior details.
+        </p>
+        <b>Enquire about interiors <i class="fa-solid fa-arrow-right"></i></b>
+      </div>
+    </a>
+
+    <a class="home-service-panel exterior-panel" href="contact.html">
+      <div class="home-service-copy">
+        <span>03 / OUTSIDE YOUR PROPERTY</span>
+        <h3>Exterior Painting</h3>
+        <p>
+          Render, masonry, exterior woodwork and property
+          exteriors, refreshed and protected.
+        </p>
+        <b>Enquire about exteriors <i class="fa-solid fa-arrow-right"></i></b>
+      </div>
+    </a>
+
+    <a class="home-service-panel commercial-panel" href="contact.html">
+      <div class="home-service-copy">
+        <span>04 / BUSINESS & AGRICULTURE</span>
+        <h3>Commercial & Agricultural</h3>
+        <p>
+          Industrial buildings, cladding, agricultural
+          buildings and protective coatings.
+        </p>
+        <b>Enquire about commercial work <i class="fa-solid fa-arrow-right"></i></b>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="home-service-cta">
+    <a href="contact.html" class="btn primary">
+      Tell Us About Your Project
+    </a>
+  </div>
+
 </section>
 
-<section class="section process reveal" id="process">
+<!-- RECENT PROJECTS -->
+
+<section class="section gallery" id="gallery">
+
+  <p class="eyebrow">Recent Projects</p>
+  <h2>See the Sprayden difference.</h2>
+
+  <p class="section-text">
+    Every project is professionally prepared and finished
+    to give your property a fresh new look. Here's a selection
+    of our recent spraying work across Hampshire.
+  </p>
+
+  <div class="before-after-grid">
+
+    <div class="ba-card">
+      <span>Before • UPVC Window Spraying</span>
+      <img src="before-window.jpg.jpg" alt="Before UPVC window spraying">
+    </div>
+
+    <div class="ba-card">
+      <span>After • Black Finish</span>
+      <img src="after-window.jpg.jpg" alt="After UPVC window spraying">
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:30px;">
+    <a href="gallery.html" class="btn primary">
+      Explore Our Gallery →
+    </a>
+  </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="section process" id="process">
+
   <p class="eyebrow">How it works</p>
   <h2>A clean, simple process.</h2>
 
   <div class="process-grid">
+
     <article>
       <b>01</b>
-      <h3>Send Photos</h3>
-      <p>Send pictures of what you want sprayed.</p>
+      <h3>Tell Us About Your Project</h3>
+      <p>Send us details or photographs of the work you need.</p>
     </article>
 
     <article>
@@ -209,24 +470,30 @@ Factory-quality finishes without the cost of replacement.
 
     <article>
       <b>03</b>
-      <h3>Prep & Spray</h3>
-      <p>Professional masking, preparation and spraying.</p>
+      <h3>Preparation & Work</h3>
+      <p>Professional preparation and attention to detail.</p>
     </article>
 
     <article>
       <b>04</b>
       <h3>Final Finish</h3>
-      <p>Your home gets a fresh premium transformation.</p>
+      <p>Enjoy your refreshed property and quality finish.</p>
     </article>
+
   </div>
+
 </section>
 
-<section class="section reviews reveal" id="reviews">
+<!-- REVIEWS -->
+
+<section class="section reviews" id="reviews">
+
   <p class="eyebrow">Customer feedback</p>
   <h2>Built for five-star impressions.</h2>
 
   <div class="review-marquee">
     <div class="review-track">
+
       <article class="review-card">
         <strong>★★★★★</strong>
         <p>"The finish completely transformed the look of the windows."</p>
@@ -250,106 +517,126 @@ Factory-quality finishes without the cost of replacement.
         <p>"Excellent communication from start to finish. Highly recommended."</p>
         <span>Sprayden Customer</span>
       </article>
+
     </div>
   </div>
+
 </section>
 
+<!-- FAQ -->
 
-<section class="section faq reveal" id="faq">
+<section class="section faq" id="faq">
+
   <p class="eyebrow">Questions</p>
   <h2>Frequently Asked Questions</h2>
 
   <div class="faq-list">
 
     <details>
+      <summary>What services does Sprayden offer?</summary>
+      <p>
+        We offer specialist spraying, interior painting and decorating,
+        exterior painting, and commercial and agricultural coating work.
+      </p>
+    </details>
+
+    <details>
       <summary>Is spraying cheaper than replacing?</summary>
-      <p>Yes. Spraying existing windows, doors and kitchens is usually much cheaper than replacing them.</p>
+      <p>
+        Spraying existing windows, doors and kitchens can often be
+        much more cost-effective than replacing them.
+      </p>
     </details>
 
     <details>
       <summary>How long does the finish last?</summary>
-      <p>With the correct preparation and care, a professionally sprayed finish can last for many years.</p>
+      <p>
+        With the correct preparation and care, a professionally
+        sprayed finish can last for many years.
+      </p>
     </details>
 
     <details>
-      <summary>Can I choose any colour?</summary>
-      <p>Yes. We offer a wide range of colours to suit modern and traditional homes.</p>
+      <summary>Can I choose my own colour?</summary>
+      <p>
+        Yes. We offer a wide range of colours to suit modern
+        and traditional properties.
+      </p>
     </details>
 
     <details>
       <summary>What areas do you cover?</summary>
-      <p>We cover Southampton, Portsmouth, Winchester, Eastleigh, Fareham, Basingstoke and surrounding Hampshire areas.</p>
+      <p>
+        We cover Southampton, Portsmouth, Winchester, Eastleigh,
+        Fareham, Basingstoke and surrounding Hampshire areas.
+      </p>
     </details>
 
   </div>
 
-
   <div class="contact-links">
-
-    <a href="tel:07724430225">
-      📞 07724 430225
-    </a>
-
-    <a href="mailto:info@sprayden.co.uk">
-      ✉️ info@sprayden.co.uk
-    </a>
-
+    <a href="tel:07724430225">📞 07724 430225</a>
+    <a href="mailto:info@sprayden.co.uk">✉️ info@sprayden.co.uk</a>
   </div>
 
 </section>
 
+<!-- FLOATING CONTACT BUTTONS -->
+
 <a href="tel:07724430225" class="float call">
-📞 Call
+  📞 Call
 </a>
 
 <a href="https://wa.me/447724430225" class="float whats">
-💬 WhatsApp
-
+  💬 WhatsApp
 </a>
 
-<button id="backToTop" class="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-↑
+<button
+  id="backToTop"
+  class="back-top"
+  aria-label="Back to top"
+  onclick="window.scrollTo({top:0, behavior:'smooth'})">
+  ↑
 </button>
+
+<!-- MOBILE QUOTE BUTTON -->
+
+<a href="contact.html" class="mobile-quote">
+  GET A QUOTE
+</a>
+
+<!-- FOOTER -->
 
 <footer id="footer">
 
   <img src="logo.png.PNG" alt="Sprayden Logo">
 
   <h3>Sprayden</h3>
-  
-  <p>
-    Professional UPVC, kitchen, garage door and exterior spraying across Hampshire.
-    </p>
-  <div class="footer-contact">
-    <a href="tel:07724430225">📞 07724 430225</a>
-    <a href="mailto:info@sprayden.co.uk">✉️ info@sprayden.co.uk</a>
-    <a href="https://facebook.com/Spraydenofficial">Facebook</a>
-    <a href="https://instagram.com/Spraydenofficial">Instagram</a>
-</div>
 
-<p>© 2026 Sprayden. All Rights Reserved.</p>
+  <p>
+    Professional spraying, painting and decorating
+    across Hampshire.
+  </p>
+
+  <div class="footer-contact">
+
+    <a href="tel:07724430225">📞 07724 430225</a>
+
+    <a href="mailto:info@sprayden.co.uk">
+      ✉️ info@sprayden.co.uk
+    </a>
+
+    <a href="https://facebook.com/Spraydenofficial">Facebook</a>
+
+    <a href="https://instagram.com/Spraydenofficial">Instagram</a>
+
+  </div>
+
+  <p>© 2026 Sprayden. All Rights Reserved.</p>
 
 </footer>
-      
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector('form[name="quote"]');
-
-    if (form) {
-        form.addEventListener("submit", function () {
-            if (typeof gtag === "function") {
-                gtag("event", "quote_request", {
-                    event_category: "Lead",
-                    event_label: "Quote Form"
-                });
-            }
-        });
-    }
-});
-</script>
 
 <script src="script.js"></script>
+
 </body>
 </html>
-
