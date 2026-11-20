@@ -3,71 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Quote | Sprayden</title>
+
+  <title>Get a Free Quote | Sprayden Hampshire</title>
+
+  <meta name="description" content="Request a free quote from Sprayden for specialist spraying, interior and exterior painting, decorating and commercial and agricultural projects across Hampshire.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="topbar">
+<header class="topbar" id="topbar">
+
   <a href="index.html" class="brand">
     <img src="logo.png.PNG" alt="Sprayden logo">
   </a>
 
-  <a href="index.html" class="topbar-btn">Home</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+    ☰
+  </button>
+
+  <nav class="nav-links" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
 </header>
 
 <section class="section quote-page">
-  <p class="eyebrow">Free Quote</p>
-  <h1>Request your free quote.</h1>
+
+  <p class="eyebrow">Let's Get Started</p>
+
+  <h1>Request Your Free Quote.</h1>
 
   <p class="section-text">
-    Tell us what you would like sprayed and we’ll get back to you as soon as possible.
+    Whether you're looking for specialist spraying,
+    interior decorating, exterior painting or commercial
+    work, we'd love to hear about your project.
+
+    Tell us a little about what you need and, if possible,
+    upload some photographs to help us understand the job.
   </p>
 
-  <form name="quote" method="POST" data-netlify="true" enctype="multipart/form-data" class="quote-form">
+  <form
+    name="quote"
+    method="POST"
+    data-netlify="true"
+    enctype="multipart/form-data"
+    class="quote-form"
+  >
+
     <input type="hidden" name="form-name" value="quote">
 
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="email" name="email" placeholder="Email Address">
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      autocomplete="name"
+      required
+    >
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Phone Number"
+      autocomplete="tel"
+      required
+    >
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Email Address"
+      autocomplete="email"
+    >
 
     <select name="service" required>
-      <option value="">Choose Service</option>
-      <option>UPVC Windows</option>
-      <option>Kitchen Spraying</option>
-      <option>Composite Door</option>
-      <option>Garage Door</option>
-      <option>Conservatory</option>
-      <option>Furniture</option>
-      <option>Other</option>
+      <option value="">Choose Your Service</option>
+      <option value="Specialist Spraying">Specialist Spraying</option>
+      <option value="Interior Painting and Decorating">Interior Painting & Decorating</option>
+      <option value="Exterior Painting">Exterior Painting</option>
+      <option value="Commercial and Agricultural">Commercial & Agricultural</option>
+      <option value="Other">Other / Not Sure Yet</option>
     </select>
 
-    <input type="text" name="area" placeholder="Town / Area">
+    <input
+      type="text"
+      name="area"
+      placeholder="Your Town / Area"
+      autocomplete="address-level2"
+    >
 
-    <textarea name="message" placeholder="Tell us about your project..." rows="5"></textarea>
+    <textarea
+      name="message"
+      placeholder="Tell us about your project. What would you like us to transform?"
+      rows="6"
+    ></textarea>
 
     <label class="upload-label">
-      Upload photos optional
-      <input type="file" name="photos" multiple>
+      <i class="fa-solid fa-camera"></i>
+      Upload Project Photos (Optional)
+      <input
+        type="file"
+        name="photos"
+        accept="image/*"
+        multiple
+      >
     </label>
 
-    <p class="form-note">We aim to respond to all enquiries within 24 hours.</p>
+    <p class="form-note">
+      Photos are optional but can help us understand your project.
+      We aim to respond to enquiries within 24 hours.
+    </p>
 
-    <button type="submit" class="btn primary">Request Free Quote</button>
+    <button type="submit" class="btn primary">
+      Request My Free Quote
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
   </form>
 
-  <div class="footer-contact">
-    <a href="tel:07724430225">📞 07724 430225</a>
-    <a href="mailto:info@sprayden.co.uk">✉️ info@sprayden.co.uk</a>
-    <a href="https://wa.me/447724430225">💬 WhatsApp</a>
+  <div class="contact-links">
+
+    <h2>Prefer to Contact Us Directly?</h2>
+
+    <a href="tel:07724430225">
+      <i class="fa-solid fa-phone"></i>
+      07724 430225
+    </a>
+
+    <a href="mailto:info@sprayden.co.uk">
+      <i class="fa-solid fa-envelope"></i>
+      info@sprayden.co.uk
+    </a>
+
+    <a href="https://wa.me/447724430225" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i>
+      Message Us on WhatsApp
+    </a>
+
   </div>
+
 </section>
 
-<footer>
+<footer id="footer">
+
   <img src="logo.png.PNG" alt="Sprayden Logo">
+
+  <h3>Sprayden</h3>
+
+  <p>
+    Professional spraying, painting and decorating
+    across Hampshire.
+  </p>
+
+  <div class="footer-contact">
+
+    <a href="tel:07724430225">📞 07724 430225</a>
+
+    <a href="mailto:info@sprayden.co.uk">
+      ✉️ info@sprayden.co.uk
+    </a>
+
+    <a href="https://www.facebook.com/spraydenltd" target="_blank" rel="noopener noreferrer">Facebook</a>
+
+    <a href="https://www.instagram.com/spraydenltd" target="_blank" rel="noopener noreferrer">Instagram</a>
+
+    <a href="https://www.tiktok.com/@spraydenltd" target="_blank" rel="noopener noreferrer">TikTok</a>
+
+  </div>
+
   <p>© 2026 Sprayden. All Rights Reserved.</p>
+
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
